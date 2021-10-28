@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/pixi.min.js"></script>
+    
+    
+    
+    
+    <script>
+		var app = new PIXI.Application(500.4,967.2);
+        document.body.appendChild(app.view);
+        
+        var bg = new PIXI.Sprite.fromImage("res/yuantu.jpg");
+        var n = new PIXI.Sprite.fromImage("res/鸟.png");
+        var d = new PIXI.Sprite.fromImage("res/点击.png");
+        app.stage.addChild(bg);
+        app.stage.addChild(n);
+        bg.scale.x = 0.3;
+        bg.scale.y = 0.3;
+        n.x = 345;
+        n.y = 265;
+        n.scale.x = 0.3;
+        n.scale.y = 0.3;
+        app.stage.addChild(d);
+        d.scale.x = 0.1;
+        d.scale.y = 0.1;
+        d.x = 370;
+        d.y = 300;
+        d.anchor.set(0.5,0.5);
+        
+       
+        
+        
+        
+        
+        
+        
+        
+        n.interactive = true;
+		n.on("click",dianji);
+		function dianji(){
+    		var n1 = new PIXI.Sprite.fromImage("res/大鸟.png");
+			app.stage.addChild(n1);
+			n1.scale.x = 0.3;
+			n1.scale.y = 0.3;
+			n1.alpha = 0;
+			
+			
+			var zi = new PIXI.Text("赤腹鹰");      
+        	zi.style.fontWeight = "bold";
+			app.stage.addChild(zi);    
+        	zi.x = 150;
+        	zi.y = 500;
+        	zi.alpha = 0;
+        	
+        	var zi1 = new PIXI.Text("数量甚少而极珍稀");      
+			app.stage.addChild(zi1);    
+        	zi1.x = 50;
+        	zi1.y = 550;
+        	zi1.alpha = 0;
+        
+        	var zi2= new PIXI.Text("属于国家二级保护动物");      
+			app.stage.addChild(zi2);    
+        	zi2.x = 50;
+        	zi2.y = 580;
+        	zi2.alpha = 0;
+        
+        
+        	var zi3= new PIXI.Text("也已列入濒危动植物种");      
+			app.stage.addChild(zi3);    
+        	zi3.x = 50;
+        	zi3.y = 610;
+        	zi3.alpha = 0;
+        	
+        	var zi4= new PIXI.Text("栖息于天台山山地森林");      
+			app.stage.addChild(zi4);    
+        	zi4.x = 50;
+        	zi4.y = 660;
+        	zi4.alpha = 0;
+
+			var zi5= new PIXI.Text("和林缘地带");      
+			app.stage.addChild(zi5);    
+        	zi5.x = 50;
+        	zi5.y = 690;
+        	zi5.alpha = 0;
+
+        	var zi6= new PIXI.Text("也见于低山丘陵和山麓");      
+			app.stage.addChild(zi6);    
+        	zi6.x = 50;
+        	zi6.y = 720;
+        	zi6.alpha = 0;
+        
+        	var zi7= new PIXI.Text("平原地带的小块丛林");      
+			app.stage.addChild(zi7);    
+        	zi7.x = 50;
+        	zi7.y = 750;
+        	zi7.alpha = 0;
+        
+        	var zi8= new PIXI.Text("农田地缘和村庄附近");      
+			app.stage.addChild(zi8);    
+        	zi8.x = 50;
+        	zi8.y = 780;
+        	zi8.alpha = 0;
+			app.ticker.add(animate);
+			function animate() {
+    			bg.alpha -= 0.005;
+    			n.alpha -= 0.005;
+    			n1.alpha += 0.005;
+    			zi.alpha += 0.003;
+    			zi1.alpha += 0.0025;
+    			zi2.alpha += 0.0022;
+    			zi3.alpha += 0.0019;
+    			zi4.alpha += 0.0016;
+    			zi5.alpha += 0.0014;
+    			zi6.alpha += 0.0012;
+    			zi7.alpha += 0.0010;
+    			zi8.alpha += 0.0009;
+			}
+			
+		}
+    </script>
+</body>
+</html>
